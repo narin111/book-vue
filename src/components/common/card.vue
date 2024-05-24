@@ -26,9 +26,16 @@ const props = defineProps({
               Edit
             </button>
           </div>
-          <small class="text-body-secondary"
-            >{{ lib.getNumberFormatted(props.item.price) }} 원</small
-          >
+          <small class="price text-muted"
+            >{{ lib.getNumberFormatted(props.item.price) }} 원
+          </small>
+          <small class="discount badge bg-danger "
+            >{{ item.discountPer }}%
+          </small>
+          <small class="real text-danger"
+            >{{ lib.getNumberFormatted(props.item.price - (props.item.price * item.discountPer/100)) }} 원
+          </small>
+          
         </div>
       </div>
     </div>
@@ -42,5 +49,9 @@ const props = defineProps({
   height: 250px;
   background-size: cover;
   background-position: center;
+}
+
+.card .card-body .price{
+  text-decoration: line-through;
 }
 </style>

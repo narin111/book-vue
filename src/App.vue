@@ -1,14 +1,14 @@
 <script setup>
 import AppHeader from './components/layout/AppHeader.vue'
 import AppFooter from './components/layout/AppFooter.vue'
-import MainPage from './views/MainPage.vue'
+
 </script>
 <template>
-<div>
-<AppHeader/>
-<MainPage/>
-<AppFooter/>
-</div>
+  <div>
+  <AppHeader/>
+  <RouterView/>
+  <AppFooter/>
+  </div>
 </template>
 
 
